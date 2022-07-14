@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
+import Input from './components/Input';
+import Container from './components/Container';
 
 function App() {
   const name = 'CoderHouse'
@@ -68,23 +70,11 @@ function App() {
   console.log(edadConNuevoNombre)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. {name}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <Container />
+    </>
+
   );
 }
 
