@@ -7,14 +7,19 @@ import SuperForm from './components/SuperForm';
 import ClassApp from './components/ClassApp';
 import { useState } from 'react';
 import FunctionApp from './components/FunctionApp';
+import SuperButton from './components/SuperButton';
 
 const App = () => {
+  const [showFunctionApp, setShowFunctionApp] = useState(true)
 
 
   return (
     <div className="App">
-      <SuperForm title='Hey!'></SuperForm>
-      <ClassApp />
+      {/* <ClassApp /> */}
+      <div onClick={() => setShowFunctionApp(false)}>MATAR APP</div>
+      {showFunctionApp && <FunctionApp />}
+      {/* <SuperForm title='Hey!' buttonComponent={SuperButton}/> */}
+      {/* <SuperButton buttonText='Aceptar' /> */}
     </div>
   );
 }

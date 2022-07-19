@@ -10,6 +10,7 @@ class ClassApp extends Component {
   }
 
   updateName = () => {
+    // this.state.name = 'pepito' NO SE HACE
     this.setState({
       name: 'ReactFunction'
     })
