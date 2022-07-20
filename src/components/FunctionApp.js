@@ -12,8 +12,16 @@ const FunctionApp = () => {
   }
 
   useEffect(() => {
-    console.log('componentDidMount')
-    return () => console.log('componentWillUnmount')
+    console.log('componentDidMount FunctionApp')
+    console.log('El component ya esta montado en el DOM');
+    console.log('Momento perfecto para hacer llamadas asincronicas y obtener datos');
+  
+    return () => {
+      console.log('componentWillUnmount FunctionApp');
+      console.log('El component esta apunto de salir del DOM');
+      console.log('Momento perfecto para hacer limpieza');
+      console.log('timeouts, intervals y listeners');
+    }
   }, [])
 
   console.log('FunctionApp se va a renderizar...')

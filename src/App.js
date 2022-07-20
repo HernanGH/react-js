@@ -16,8 +16,8 @@ const App = () => {
   return (
     <div className="App">
       {/* <ClassApp /> */}
-      <div onClick={() => setShowFunctionApp(false)}>MATAR APP</div>
       {showFunctionApp && <FunctionApp />}
+      <button onClick={() => setShowFunctionApp(false)}>Sacar del DOM el componente</button>
       {/* <SuperForm title='Hey!' buttonComponent={SuperButton}/> */}
       {/* <SuperButton buttonText='Aceptar' /> */}
     </div>
