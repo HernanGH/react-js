@@ -8,18 +8,21 @@ class ClassApp extends Component {
       name: 'ReactClass'
     }
   }
+  static interval; 
 
   componentDidMount() {
     console.log('componentDidMount ClassApp');
-    console.log('El component ya esta montado en el DOM');
-    console.log('Momento perfecto para hacer llamadas asincronicas  y obtener datos');
+    console.log('El componente ya esta montado en el DOM');
+    console.log('Momento perfecto para hacer llamadas asincronicas y obtener datos');
+    this.interval = setInterval(() => console.log('asd'), 4000)
   }
 
   componentWillUnmount() {
     console.log('componentWillUnmount ClassApp');
-    console.log('El component esta apunto de salir del DOM');
+    console.log('El componente esta apunto de salir del DOM');
     console.log('Momento perfecto para hacer limpieza');
-    console.log('timeouts, intervals y listeners');
+    console.log('timeouts, intervals y event listeners');
+    clearInterval(this.interval)
   }
   
   updateName = () => {
