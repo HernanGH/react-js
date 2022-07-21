@@ -16,9 +16,7 @@ const ItemListContainer = ({ greetings }) => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-    // mock()
+    mock()
       .then(data => {
         console.log(data)
         setItems(data) // actualizo el estado de react
