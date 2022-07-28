@@ -8,7 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/react-js'>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer greetings='CoderHouse' />} />
