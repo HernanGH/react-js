@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 
 const ItemListContainer = ({ greetings }) => {
   const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
   const postId = 4
 
   useEffect(() => {
