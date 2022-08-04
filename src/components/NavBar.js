@@ -24,6 +24,7 @@ const NavBar = () => {
             </Nav.Link>
           </LinkContainer>
         </Nav>
+        <CardWidget />
       </Container>
     </Navbar>
   );
