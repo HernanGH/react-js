@@ -29,21 +29,5 @@ const NavBar = () => {
     </Navbar>
   );
 }
- 
-    // <StyledNavBar>
-    //   Ecommerce
-    //   <ul>
-    //     <li>
-    //       <Link to='/' >
-    //         Home
-    //       </Link>
-    //     </li>
-    //     <li>
-    //       <Link to='/item/1' >
-    //         Detail
-    //       </Link>
-    //     </li>
-    //   </ul>
-    //   <CardWidget />
-    // </StyledNavBar>
+
 export default NavBar;

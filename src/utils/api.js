@@ -25,7 +25,8 @@ export const deleteData = (dataId) => fetch(`${BASE_URL}posts/${dataId}`, {
 })
 
 const products = [
-  {id: 0, name: 'asd', username: 'asd', email: 'asdasd'}
+  {id: 0, name: 'Pizza', price: '500 $', category: 'comida'},
+  {id: 1, name: 'Cerveza', username: '300 $', category: 'bebida'}
 ]
 
 export const mock = () => {

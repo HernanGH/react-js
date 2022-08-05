@@ -3,6 +3,12 @@ import { useParams } from "react-router-dom";
 import { getItem } from "../utils/api";
 import ItemDetail from "./ItemDetail";
 import Spinner from 'react-bootstrap/Spinner';
+import styled from "styled-components";
+
+const StyledDetail = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const ItemDetailContainer = () => {
   const { productId } = useParams()
@@ -22,10 +28,10 @@ const ItemDetailContainer = () => {
   }, [productId])
 
   return (
-    <>
+    <StyledDetail>
       {loading && <Spinner animation="grow" />}
-      <ItemDetail item={item} />
-    </>
+      {item && <ItemDetail item={item} />}
+    </StyledDetail>
   );
 }
  

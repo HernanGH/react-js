@@ -14,11 +14,12 @@ const StyledCount = styled.h5`
 `
 
 const CardWidget = () => {
-  const { cantInCart } = useContext(CartContext)
+  const valueToShare = useContext(CartContext) // 3 Consumir del context atraves del hook useContext
+  console.log(valueToShare)
   return (
     <>
       <StyledIcon />
-      <StyledCount>{cantInCart}</StyledCount>
+      <StyledCount>{valueToShare.cantInCart}</StyledCount>
     </>
   );
 }

@@ -20,7 +20,6 @@ const ItemListContainer = ({ greetings }) => {
     // deleteData(postId)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         setItems(data) // actualizo el estado de react
       })
     
