@@ -4,7 +4,6 @@ export const CartContext = createContext({}); // 1 crear context
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
-  console.log(cart.length)
   const isInCart = () => {}
 
   const cleanCart = () => {
@@ -66,9 +65,16 @@ const CartProvider = ({ children }) => {
 
   const removeToCart = () => {}
 
+  // let cantInCart = 0
+  // cart.forEach((item) => {
+  //   cantInCart += item.quantity
+  // })
+
+  const cantInCart = cart.reduce((previous, item) => previous + item.quantity, 0)
+
   const valueToShare = {
     cart,
-    cantInCart: cart.length,
+    cantInCart,
     removeToCart, 
     isInCart,
     cleanCart,

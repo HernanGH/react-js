@@ -1,10 +1,20 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import styled from 'styled-components';
 
-const Item = ({ item, width = '10rem', hiddeButton = false }) => {
+const StyledCard = styled(Card)`
+  width: ${(props) => props.width};
+
+  .card-img-top {
+    height: 25rem;
+    object-fit: cover;
+  }
+`
+
+const Item = ({ item, width = '20rem', hiddeButton = false }) => {
   return (
-    <Card style={{ width }}>
-      <Card.Img variant="top" src="https://via.placeholder.com/150/92c952" />
+    <StyledCard width={width}>
+      <Card.Img variant="top" src={item.image} />
       <Card.Body>
         <Card.Title>{item.name}</Card.Title>
         <Card.Text>
@@ -12,7 +22,7 @@ const Item = ({ item, width = '10rem', hiddeButton = false }) => {
         </Card.Text>
         {!hiddeButton && <Button variant="primary">Ver detalle</Button>}
       </Card.Body>
-    </Card>
+    </StyledCard>
   );
 }
  
