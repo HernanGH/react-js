@@ -18,9 +18,14 @@ const NavBar = () => {
               Home
             </Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/item/1">
+          <LinkContainer to="/comida">
             <Nav.Link>
-              Detail
+              Comida
+            </Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/bebida">
+            <Nav.Link>
+              Bebida
             </Nav.Link>
           </LinkContainer>
         </Nav>

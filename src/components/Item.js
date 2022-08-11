@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledCard = styled(Card)`
@@ -12,6 +13,12 @@ const StyledCard = styled(Card)`
 `
 
 const Item = ({ item, width = '20rem', hiddeButton = false }) => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/item/${item.id}`)
+  }
+  
   return (
     <StyledCard width={width}>
       <Card.Img variant="top" src={item.image} />
@@ -20,7 +27,7 @@ const Item = ({ item, width = '20rem', hiddeButton = false }) => {
         <Card.Text>
           {`Precio: ${item.price}, Categoria: ${item.category}`}
         </Card.Text>
-        {!hiddeButton && <Button variant="primary">Ver detalle</Button>}
+        {!hiddeButton && <Button variant="primary" onClick={handleClick}>Ver detalle</Button>}
       </Card.Body>
     </StyledCard>
   );

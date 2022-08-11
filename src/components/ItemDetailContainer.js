@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getItem } from "../utils/api";
 import ItemDetail from "./ItemDetail";
 import Spinner from 'react-bootstrap/Spinner';
 import styled from "styled-components";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const StyledDetail = styled.div`
   display: flex;
@@ -12,16 +12,23 @@ const StyledDetail = styled.div`
 
 const ItemDetailContainer = () => {
   const { productId } = useParams()
-  console.log({ productId })
   const [item, setItem] = useState() // primeros segundos item es undefined
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    console.log('aca el component ya esta en el dom (montado)');
+    const db = getFirestore()
+
+    const itemRef = doc(db, 'items', productId) 
     setLoading(true)
-    getItem(productId)
-      .then((product) => {
-        setItem(product) // 2 seg item tiene la data
+    getDoc(itemRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = {
+            id: snapshot.id,
+            ...snapshot.data()
+          }
+          setItem(data)
+        }
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
@@ -35,4 +42,4 @@ const ItemDetailContainer = () => {
   );
 }
  
-export default ItemDetailContainer;
+export default ItemDetailContainer
