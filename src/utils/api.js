@@ -24,9 +24,9 @@ export const deleteData = (dataId) => fetch(`${BASE_URL}posts/${dataId}`, {
   method: 'DELETE'
 })
 
-const products = [
-  {id: 0, name: 'Pizza', price: '500 $', category: 'comida', image: 'https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2021/03/30/6063031b90a87.r_d.1083-871-4663.jpeg'},
-  {id: 1, name: 'Cerveza', price: '300 $', category: 'bebida', image: 'https://www.lavanguardia.com/files/image_948_465/uploads/2020/07/13/5f0c78598c987.jpeg'}
+export const products = [
+  {name: 'Pizza de Fugazeta', price: '600 $', category: 'comida', image: 'https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2021/03/30/6063031b90a87.r_d.1083-871-4663.jpeg'},
+  {name: 'Cerveza', price: '300 $', category: 'bebida', image: 'https://www.lavanguardia.com/files/image_948_465/uploads/2020/07/13/5f0c78598c987.jpeg'}
 ]
 
 export const fetchProducts = () => {
@@ -42,3 +42,5 @@ export const getItem = (itemId) => {
   })
   return task
 }
+
+// export const createProducts

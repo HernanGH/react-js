@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -18,20 +19,26 @@ const CartContainer = () => {
 
   const handleDelete = (item) => console.log('delete', item);
 
-  const handleClick = () => {
+  const sendOrder = () => {
     const newOrder = {
       buyer: USER_DEMO,
       items: cart,
       total: calcTotal(cart)
     }
-    console.log(newOrder)
+
+    const db = getFirestore()
+    const orderCollection = collection(db, 'orders')
+    
+    addDoc(orderCollection, newOrder)
+      .then(({ id }) => console.log({ id }))
+      .catch((error) => console.error(error))
   };
 
   return (
     <Container>
       <h1>Carrito de compras</h1>
       <Cart items={cart} onDelete={handleDelete} />
-      <Button variant="success" onClick={handleClick}>Finalizar comprar</Button>
+      <Button variant="success" onClick={sendOrder}>Finalizar comprar</Button>
     </Container>
   );
 }

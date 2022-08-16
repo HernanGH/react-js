@@ -9,6 +9,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import CartProvider from './context/CartContext';
 import Loader from './components/Loader';
 import CartContainer from './components/CartContainer';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import { products } from './utils/api';
 
 const App = () => {
   return (
