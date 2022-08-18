@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './NavBar.css'
 import CardWidget from "./CardWidget";
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
@@ -11,7 +10,7 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand>Ecommerce</Navbar.Brand>
         <Nav className="me-auto">
           <LinkContainer to="/">
             <Nav.Link>

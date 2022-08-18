@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { createData, deleteData, fetchProducts, updateData } from "../utils/api";
 import ItemList from "./ItemList";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
